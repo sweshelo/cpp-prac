@@ -9,6 +9,7 @@ class SuperClass{
         std::string name;
         SuperClass(std::string _str);
         void greeting();
+        void (*execute)();
 };
 
 class DerivedClass : public SuperClass{

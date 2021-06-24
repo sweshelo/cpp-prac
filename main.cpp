@@ -3,13 +3,17 @@
 
 using namespace std;
 
+void argFunc(){
+    cout << "関数ポインタのテストです。こんにちは。"<< endl;
+}
+
 int main(){
 
-    SuperClass c("sw");
-    c.greeting();
+    void (*fp)() = argFunc;
 
-    DerivedClass t("dm");
-    t.greeting();
+    SuperClass c("sw");
+    c.execute = fp;
+    c.execute();
 
     return 0;
 }
